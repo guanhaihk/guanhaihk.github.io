@@ -5,16 +5,46 @@
   <title>guanhai.hk</title>
 </head>
 <body>
-  <p>请访问<a id='forward_anchor'>此链接</a></p>
+  <p>
+  我们搬家啦！观海｜新边疆最新域名<code>guanhaihk.com</code>
+  </p>
+  <p>
+  本网页将在<span id='countdown'>5</span>秒后跳转至新域名.
+  <br />
+  如果没有成功跳转，请点击<a id='forward_anchor'>此链接</a>
+  </p>
   <script type="text/javascript">
-  var forward_url = location.href;
+
+  var forward_anchor = document.getElementById('forward_anchor');
+  var countdown_text = document.getElementById('countdown');
+
+  // change url
   var parser = document.createElement('a');
-  parser.href = forward_url;
+  parser.href = location.href;;
   parser.protocol = 'http:';
   parser.hostname = 'guanhaihk.com';
   parser.port = 80;
-  var forward_anchor = document.getElementById('forward_anchor');
-  forward_anchor.href = parser.href;
+  var forward_url = parser.href;
+
+  forward_anchor.href = forward_url;
+
+  // countdown
+  var count=5;
+  var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+
+  function timer()
+  {
+    count=count-1;
+    if (count <= 0)
+    {
+       clearInterval(counter);
+       //counter ended, do something here
+       countdown_text.innerHTML = '0'
+       window.location = forward_url;
+    }
+    //Do code for showing the number of seconds here
+    countdown_text.innerHTML = count;
+  }
   </script>
 </body>
 </html>
