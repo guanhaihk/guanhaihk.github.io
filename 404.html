@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>guanhai.hk</title>
+</head>
+<body>
+  <p>请访问<a id='forward_anchor'>此链接</a></p>
+  <script type="text/javascript">
+  var forward_url = location.href;
+  var parser = document.createElement('a');
+  parser.href = forward_url;
+  parser.protocol = 'http:';
+  parser.hostname = 'guanhaihk.com';
+  parser.port = 80;
+  var forward_anchor = document.getElementById('forward_anchor');
+  forward_anchor.href = parser.href;
+  </script>
+</body>
+</html>
